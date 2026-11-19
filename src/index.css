@@ -1,0 +1,253 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    color: #2D201A;
+    background-color: #F9F6F3;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.02em;
+  }
+
+  .font-display {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+}
+
+/* Authentic Calmlyss Design System Classes */
+.bg-canvas {
+  background-color: #F9F6F3;
+}
+
+.bg-canvas-linen {
+  background-color: #F2ECE5;
+}
+
+.bg-canvas-card {
+  background-color: #FFFFFF;
+}
+
+.text-espresso-main {
+  color: #2D201A;
+}
+
+.text-espresso-muted {
+  color: #6B584E;
+}
+
+.text-espresso-subtle {
+  color: #8A766C;
+}
+
+.border-soothing {
+  border-color: #D9CEC7;
+}
+
+/* Bulletproof Card Styles */
+.card-soothing-white {
+  background-color: #FFFFFF !important;
+  color: #2D201A !important;
+  border: 1px solid #D9CEC7;
+}
+
+.card-soothing-white h3, 
+.card-soothing-white h4,
+.card-soothing-white .card-title {
+  color: #2D201A !important;
+}
+
+.card-soothing-white p,
+.card-soothing-white .card-desc {
+  color: #6B584E !important;
+}
+
+.card-soothing-white .card-bullet {
+  color: #43342D !important;
+}
+
+/* Calmlyss Tactile Shiny Pill Button Styling */
+.calmlyss-btn {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 100rem;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.8rem 1.85rem;
+  max-width: 100%;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, filter 0.3s ease, background 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Glossy Animated Light Sheen Sweep */
+.calmlyss-btn::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  left: -80%;
+  width: 55%;
+  height: 140%;
+  background: linear-gradient(
+    115deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.14) 35%,
+    rgba(255, 255, 255, 0.48) 50%,
+    rgba(255, 255, 255, 0.14) 65%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-22deg);
+  pointer-events: none;
+  z-index: 1;
+  animation: btnShine 4.2s ease-in-out infinite;
+}
+
+.calmlyss-btn:hover::before {
+  animation: btnShineHover 0.85s ease-out 1;
+}
+
+.calmlyss-btn:active {
+  transform: translateY(1px) scale(0.985) !important;
+}
+
+@media (max-width: 639px) {
+  .calmlyss-btn {
+    padding: 0.8rem 1.35rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+  }
+}
+
+.calmlyss-btn-primary {
+  background: linear-gradient(180deg, #9C7863 0%, #866452 52%, #6E5040 100%);
+  color: #FFFFFF !important;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.36),
+    inset 0 -2px 0 rgba(45, 32, 26, 0.28),
+    0 8px 22px -4px rgba(134, 100, 82, 0.45),
+    0 2px 6px rgba(45, 32, 26, 0.14);
+}
+
+.calmlyss-btn-primary:hover {
+  background: linear-gradient(180deg, #A9836D 0%, #8F6B58 52%, #765645 100%);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    inset 0 -2px 0 rgba(45, 32, 26, 0.25),
+    0 14px 28px -4px rgba(134, 100, 82, 0.55),
+    0 4px 10px rgba(45, 32, 26, 0.18);
+}
+
+.calmlyss-btn-gold {
+  background: linear-gradient(180deg, #E8C396 0%, #D4A373 52%, #BC8B5B 100%);
+  color: #191412 !important;
+  border: 1px solid rgba(255, 248, 238, 0.48);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.62),
+    inset 0 -2px 0 rgba(107, 68, 35, 0.3),
+    0 10px 26px -4px rgba(212, 163, 115, 0.48),
+    0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.calmlyss-btn-gold:hover {
+  background: linear-gradient(180deg, #F0CFA4 0%, #DDB080 52%, #C79564 100%);
+  border-color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -2px 0 rgba(107, 68, 35, 0.28),
+    0 16px 32px -4px rgba(212, 163, 115, 0.6),
+    0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.calmlyss-btn-secondary {
+  background: linear-gradient(180deg, #FFFFFF 0%, #F5EFE8 100%);
+  color: #2D201A !important;
+  border: 1px solid #CBBFB6;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -2px 0 rgba(134, 100, 82, 0.14),
+    0 5px 14px -2px rgba(45, 32, 26, 0.1);
+}
+
+.calmlyss-btn-secondary:hover {
+  background: linear-gradient(180deg, #FFFFFF 0%, #EFE6DC 100%);
+  border-color: #B48A72;
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 0 rgba(134, 100, 82, 0.2),
+    0 10px 22px -4px rgba(134, 100, 82, 0.22);
+}
+
+@keyframes btnShine {
+  0%, 72% {
+    left: -80%;
+  }
+  100% {
+    left: 145%;
+  }
+}
+
+@keyframes btnShineHover {
+  0% {
+    left: -80%;
+  }
+  100% {
+    left: 145%;
+  }
+}
+
+/* Character reveal utilities */
+.char-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.char-inner {
+  display: inline-block;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F9F6F3;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9CEC7;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #AC9A90;
+}
+
+/* Sound Wave Animation for Ambient Spa Audio */
+@keyframes soundWave {
+  0%, 100% {
+    height: 4px;
+    opacity: 0.6;
+  }
+  50% {
+    height: 14px;
+    opacity: 1;
+  }
+}
